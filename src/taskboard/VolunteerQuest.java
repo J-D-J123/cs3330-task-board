@@ -1,6 +1,11 @@
 package taskboard;
 
 /**
+ * Author: Joey Johnson
+ * Date:	 3/16/2026
+ * File: VolunteerQuest.java
+ 
+ * Desc:
  * A student completes this by volunteering some number of hours 
  * Required additonal data:
  * 		- int days (must be positive)

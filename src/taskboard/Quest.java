@@ -1,11 +1,16 @@
 package taskboard;
 
 /**
- * int getId()
- * String getTitle()
- * int getBasePoints()
- * boolean isCompleted()
- * int compeleteFor(Student s)
+ * Author: Joey Johnson
+ * Date:	 3/16/2026
+ * File: Quest.java
+ * 
+ * Desc:
+ * - int getId()
+ * - String getTitle()
+ * - int getBasePoints()
+ * - boolean isCompleted()
+ * - int compeleteFor(Student s)
  * 
  * Critical Rule: 
  * 	- Must update the quest's completion state
