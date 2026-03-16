@@ -16,6 +16,6 @@ package taskboard;
  *  - Abstract classes and abstract methods are part of what we covered idk why it says that lol
  */
 
-public class AbstractQuest {
+public abstract class AbstractQuest {
 
 }
