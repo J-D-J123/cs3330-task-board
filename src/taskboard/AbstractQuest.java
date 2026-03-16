@@ -18,4 +18,10 @@ package taskboard;
 
 public abstract class AbstractQuest {
 
+	private int 			quest_id; 
+	private String 		quest_title;
+	private int			quest_basepoints; 
+	private boolean		quest_completed; 
+	
+	
 }
