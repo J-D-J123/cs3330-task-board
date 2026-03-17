@@ -49,6 +49,6 @@ public interface Quest {
 	 * @param s specific student doing the quest
 	 * @return the number of points awarded to the student 
 	 */
-	int compeleteFor(Student s);
+	int completeFor(Student s);
 	
 }	

@@ -35,17 +35,101 @@ public abstract class AbstractQuest implements Quest{
 	 * @param basepoints is the basepoints for the AbstractQuest to be awarded
 	 * @param completed boolean if the AbstractQuest is completed or not 
 	 */
-	public AbstractQuest(int id, String name, int basepoints, boolean completed) {
+	public AbstractQuest(int id, String title, int basepoints) {
 	
 		// fail fast condition where 
 		// id > 0 name cannot be null or blank and basepoints > 0 = make object
-		if (id > 0 && ((name != null) || (!name.isBlank())) && (basepoints > 0)) {
-			quest_id = id; 
-			quest_title = name; 
-			quest_basepoints = basepoints; 
-			quest_completed = completed; 
+		if (id <= 0) {
+			
+			throw new IllegalArgumentException("quest_id must be greater than 0");
 		}
+		
+		if (title == null || title.isBlank()) {
+			
+			throw new IllegalArgumentException("quest_title is null or blank");
+		}
+		
+		if (basepoints <= 0) {
+			
+			throw new IllegalArgumentException("quest_basepoints must be greater than 0");
+		}
+		
+		quest_id = id; 
+		quest_title = title; 
+		quest_basepoints = basepoints; 
 	}
 	
-	// use Quest Interface here... 
+	// repeative getters uggghh
+	@Override 
+	/**
+	 * getId() 
+	 * @returns the int of the Quest id 
+	 */
+	public int getId() {
+		
+		return quest_id; 
+	}
+	
+	@Override 
+	/**
+	 * getTitle() 
+	 * @return a String of the quest_title
+	 */
+	public String getTitle() {
+		
+		return quest_title; 
+	}
+	
+	@Override 
+	/**
+	 * getBasePoints() 
+	 * @return an integer of the basepoints of the Quest
+	 */
+	public int getBasePoints() {
+		
+		return quest_basepoints; 
+	}
+	
+	@Override 
+	/**
+	 * isCompleted() 
+	 * @returns a boolean either true if a Quest was completed or false if not
+	 */
+	public boolean isCompleted() {
+		
+		return quest_completed; 
+	}
+	
+	@Override
+	/**
+	 * completeFor(Student s) 
+	 * @param s is the Student object that is completing this task
+	 * @return integer 0 means the Quest was already compleated otherwise it will return the quest_basepoint amount 
+	 */
+	public int completeFor(Student s) {
+		
+		// only add if the quest is completed 
+		if (!isCompleted()) {
+			
+			// complete the Quest
+			quest_completed = true; 
+			
+			// add quest_basepoints to s 
+			s.addPoints(getBasePoints()); 
+			
+			return getBasePoints(); 
+		}
+		
+		// else the Quest was already completed so do not add more points 
+		return 0; 
+	}
+	
+	/**
+	 * toSring() 
+	 * @returns a String with the object's status vairables ex. id, title, basepoints, and completed
+	 */
+	public String toString() {
+		
+		return "Quest id: " + quest_id + ", Title: " + quest_title + " BasePoints: " + quest_basepoints + ", Completed: " + quest_completed;
+	}
 }
