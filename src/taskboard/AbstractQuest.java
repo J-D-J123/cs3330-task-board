@@ -104,7 +104,7 @@ public abstract class AbstractQuest implements Quest{
 	/**
 	 * completeFor(Student s) 
 	 * @param s is the Student object that is completing this task
-	 * @return integer 0 means the Quest was already compleated otherwise it will return the quest_basepoint amount 
+	 * @return quest_point_amount 0 means the Quest was already compleated otherwise it will return the quest_basepoint amount 
 	 */
 	public int completeFor(Student s) {
 		
@@ -114,15 +114,26 @@ public abstract class AbstractQuest implements Quest{
 			// complete the Quest
 			quest_completed = true; 
 			
-			// add quest_basepoints to s 
-			s.addPoints(getBasePoints()); 
+			// get the quest point amount
+			int quest_point_amount = calculatePoints(s); 
 			
-			return getBasePoints(); 
+			// add quest_basepoints to s 
+			s.addPoints(quest_point_amount); 
+			
+			// return the Quest basepoint amount 
+			return quest_point_amount; 
 		}
 		
 		// else the Quest was already completed so do not add more points 
 		return 0; 
 	}
+	
+	/**
+	 * calculatePoints(Student s) calculates the amount of points the student should get depending on how much the Quest is worth
+	 * @param s is the Student object completing the Quest
+	 * @return an int of the amount of points the s earned 
+	 */
+	protected abstract int calculatePoints(Student s);
 	
 	/**
 	 * toSring() 
@@ -132,4 +143,4 @@ public abstract class AbstractQuest implements Quest{
 		
 		return "Quest id: " + quest_id + ", Title: " + quest_title + " BasePoints: " + quest_basepoints + ", Completed: " + quest_completed;
 	}
-}
+} // end of AbstractQuest.java

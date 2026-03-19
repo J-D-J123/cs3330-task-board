@@ -51,4 +51,4 @@ public interface Quest {
 	 */
 	int completeFor(Student s);
 	
-}	
+} // end of Quest.java

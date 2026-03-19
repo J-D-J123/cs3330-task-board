@@ -47,4 +47,4 @@ public class EventCheckInQuest extends AbstractQuest {
 		
 		return getBasePoints(); 
 	}
-}
+} // end of EventCheckInQuest.java
