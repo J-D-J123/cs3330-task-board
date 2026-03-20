@@ -42,7 +42,7 @@ public class StreakQuest extends AbstractQuest{
 			throw new IllegalArgumentException("days are negative");
 		}
 		
-		int streakQuest_days = days;
+		streakQuest_days = days;
 	}
 	
 	/**
