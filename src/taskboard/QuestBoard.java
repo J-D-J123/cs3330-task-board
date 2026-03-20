@@ -122,7 +122,7 @@ public class QuestBoard {
 		
 		int totalPoints = 0;
 		
-		List<Quest> Quests = assignments.get(s)
+		List<Quest> Quests = assignments.get(s);
 			
 		if (Quests == null || Quests.isEmpty()) {//another check to see if the list is empty
 	        return 0;
