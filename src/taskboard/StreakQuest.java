@@ -11,9 +11,8 @@ package taskboard;
  *	- int days must be positive 
  * 	
  * Design choice: 
- *  - milestone bonus: extra bonus if days >= 5 
- *  - choice this becuase they will have a motivation to get their specific tasks done 
- *  - when they do they will get more points 
+ *  - linear bonus: when called they will have a constant bonus applied to their
+ *  - amount of points: in this case their days will be multiplied by 2 then added to their basepoints
  */
 
 public class StreakQuest extends AbstractQuest{
@@ -21,11 +20,8 @@ public class StreakQuest extends AbstractQuest{
 	// required data
 	private int streakQuest_days; 
 	
-	// open design choice specific data (milestone bonus)
-	private final int milestone_bonus_requirment = 5; 
-	
-	// open design choice milestone bonus application 
-	private final int milestone_bonus_points = 2; // number 2 from the assignment pdf 
+	// open design choice linear bonus application 
+	private final int linear_bonus_points = 2; // number 2 from the assignment pdf 
 	
 	/**
 	 * StreakQuest(...) is the contstructor for StreakQuest 
@@ -55,21 +51,12 @@ public class StreakQuest extends AbstractQuest{
 	}
 	
 	/**
-	 * getMileStoneBonus() returns the bonus minimum requirment on that specific Quest
+	 * getLinearBonus() returns the bonus amount per hour on that specific Quest
 	 * @return an int 
 	 */
-	public int getMileStoneBonusRequirmenet() {
+	public int getLinearBonus() {
 		
-		return milestone_bonus_requirment; 
-	}
-	
-	/**
-	 * getMileStoneBonusPoints() returns the bonus amount per hour on that specific Quest
-	 * @return an int 
-	 */
-	public int getMileStoneBonusPoints() {
-		
-		return milestone_bonus_points; 
+		return linear_bonus_points; 
 	}
 	
 	@Override 
@@ -78,16 +65,12 @@ public class StreakQuest extends AbstractQuest{
 	 * @return int of the mile stone reached or not depending on the amount of days
 	 */
 	protected int calculatePoints(Student s) {
-		
-		// check to see if the days are greater than the milestone bonus requiremnt 
-		if (getDays() >= getMileStoneBonusRequirmenet()) {
 			
-			// multiply the bonus amount of points multiplied by the amount of days worked plus their base point amount
-			return getBasePoints() + (getDays() * getMileStoneBonusPoints());
-		}
-		
-		// else return the base points and no special milestone reached 
-		return getBasePoints(); 
+		// linear bonus: basePoints + (days * 2)
+		// getDays() = amount of days
+		// getLinearBonus() = bonus caculated linearly
+		// getBasePoints() = basepoints for the specific Quest
+		return getBasePoints() + (getDays() * getLinearBonus());
 	}
 	
 } // end of StreakQuest.java
