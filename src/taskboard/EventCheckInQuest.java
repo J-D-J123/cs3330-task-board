@@ -37,7 +37,6 @@ public class EventCheckInQuest extends AbstractQuest {
 		event_name = eventName; 
 	}
 	
-	@Override 
 	/**
 	 * calculatePoints(Student s) 
 	 * @param s is the specific student that finished the Task
