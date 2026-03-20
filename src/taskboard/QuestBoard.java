@@ -1,5 +1,6 @@
 package taskboard;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class QuestBoard {
 	public Quest findQuest(int id) {
 		
 		if(!questsById.containsKey(id)) {//To check if there is no ID in the hash map
-			throw new IllegalArgumentException("There is no quest with that ID"); 
+			return null;
 		}
 		
 		return questsById.get(id);
@@ -42,9 +43,13 @@ public class QuestBoard {
 		if (q == null) {
 	    	throw new IllegalArgumentException("Alas, there is no quest...");
 	    }
-
+		
 	    List<Quest> Quests = assignments.get(s);
 
+		if(Quests == null){
+			Quests = new ArrayList<>();
+			assignments.put(s, quests);
+		}
 	    if (Quests.contains(q)) {//open design choice: student can't do the same quest again
 	    	throw new IllegalArgumentException("The student has already done this quest!");
 	    }
