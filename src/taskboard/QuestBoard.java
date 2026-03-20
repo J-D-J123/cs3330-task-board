@@ -111,28 +111,8 @@ public class QuestBoard {
 	        return;
 	    }
 
-		for (Quest q : Quests) {
+		for (Quest q : assignmentList) {
 			System.out.println(q);//prints out each of the assignments
 		}
-	}
-	/*
-	* This method calculates the sum points of all the quests that the student has completed.
-	*/
-	public int getPoints(Student s){
-		
-		int totalPoints = 0;
-		
-		List<Quest> Quests = assignments.get(s);
-			
-		if (Quests == null || Quests.isEmpty()) {//another check to see if the list is empty
-	        return 0;
-	    }
-
-		for(Quest q : Quests){
-			if(q.isCompleted()){//to check if the quest is actually completed 
-				totalPoints += q.getBasePoints();
-			}
-		}
-		return totalPoints;
 	}
 }
