@@ -36,6 +36,12 @@ public class EventCheckInQuest extends AbstractQuest {
 		
 		event_name = eventName; 
 	}
+	/*
+	* Simple getter for the event name.
+	*/
+	public String getEvent_name() {
+		return event_name;
+	}
 	
 	/**
 	 * calculatePoints(Student s) 
