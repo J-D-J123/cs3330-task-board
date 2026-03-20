@@ -42,7 +42,7 @@ public class EventCheckInQuest extends AbstractQuest {
 	public String getEvent_name() {
 		return event_name;
 	}
-	
+	@Override
 	/**
 	 * calculatePoints(Student s) 
 	 * @param s is the specific student that finished the Task
