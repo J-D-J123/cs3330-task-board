@@ -3,7 +3,7 @@ package taskboard;
 import java.util.List;
 
 /**
- * /**
+ *
  * Author: Jack Belleville
  * Date:	 3/19/2026
  * File: RewardUtil.java
@@ -20,7 +20,7 @@ public class RewardUtil {
 	 */
 	public static <T> void printAll(List<T> items) {
 		for (T item : items) {
-			System.out.println(item);
+			System.out.println(item); // System.out.println() calls toString() implicitly
 		}
 	}
 

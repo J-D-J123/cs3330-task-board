@@ -27,7 +27,7 @@ public class VolunteerQuest extends AbstractQuest{
 		
 		super(id, title, basepoints);
 		
-		// hours cannot be negative but can be 0 
+		// hours cannot be negative or 0 
 		// for example a task can take 30 min which is < 1 hour
 		if (hours <= 0) {
 			
