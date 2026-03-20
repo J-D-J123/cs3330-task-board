@@ -48,7 +48,7 @@ public class QuestBoard {
 
 		if(Quests == null){
 			Quests = new ArrayList<>();
-			assignments.put(s, quests);
+			assignments.put(s, Quests);
 		}
 	    if (Quests.contains(q)) {//open design choice: student can't do the same quest again
 	    	throw new IllegalArgumentException("The student has already done this quest!");
