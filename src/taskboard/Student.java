@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Student {
 	private String name;
-	private int points = 0;// need to be > 0
+	private int points = 0;// should never be negative
 
 	/*
 	* constructor to get the name of the student.

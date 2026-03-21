@@ -41,9 +41,9 @@ public class Main {
 		
 		//Complete at least 3 quests across different quest types
 //		board.completeQuest(s4, 5);
-		board.completeQuest(s1, 2);
 		board.completeQuest(s2, 1);
 		board.completeQuest(s1, 3);
+		board.completeQuest(s1, 5);
 		
 		//Print all quests, assignments for each student, final student point totals, and the total points across students using RewardUtil.sumPoints
 		System.out.println("\n===== All Quests =====");

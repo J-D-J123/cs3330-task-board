@@ -54,17 +54,17 @@ public class QuestBoard {
 			throw new IllegalArgumentException("There isn't a quest with that ID!");
 		}
 		
-	    List<Quest> Quests = assignments.get(s);
+	    List<Quest> quests = assignments.get(s);
 
-		if(Quests == null){
-			Quests = new ArrayList<>();
-			assignments.put(s, Quests);
+		if(quests == null){
+			quests = new ArrayList<>();
+			assignments.put(s, quests);
 		}
-	    if (Quests.contains(q)) {//open design choice: student can't do the same quest again
+	    if (quests.contains(q)) {//open design choice: student can't do the same quest again
 	    	throw new IllegalArgumentException("The student has already done this quest!");
 	    }
 	    
-	    Quests.add(q);
+	    quests.add(q);
 	}
 	/*
 	* This method finds the quest that the student has completed and goes through the list of the assigned quests
@@ -73,13 +73,13 @@ public class QuestBoard {
 	*/
 	public int completeQuest(Student s, int questId) {
 		
-		List<Quest> Quests = assignments.get(s);
+		List<Quest> quests = assignments.get(s);
 
-		if (Quests == null) {
+		if (quests == null) {
 			throw new IllegalArgumentException("Student doesn't have any assignments");
 		}
 
-		for (Quest q : Quests) {//goes through the array
+		for (Quest q : quests) {//goes through the array
 
 			if (q.getId() == questId) {
 

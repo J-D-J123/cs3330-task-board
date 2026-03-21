@@ -34,7 +34,7 @@ public interface Quest {
 	
 	/**
 	 * getBasePoints() returns the amount of basePoints for this
-	 * @return a String
+	 * @return a int
 	 */
 	int getBasePoints();
 	
